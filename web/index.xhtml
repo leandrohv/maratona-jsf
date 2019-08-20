@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+    <!--      http://4.bp.blogspot.com/-aiTqOY-SHv4/ViSC4COTB2I/AAAAAAAAFKo/-JmrBaW8k-A/s1600/jsf%2B22%2Bnamespaces.png-->
+    <h:outputLabel value=", world"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nome}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean['sobrenome']}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 == estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1
+        eq estudanteRegistrarBean.nota2
+        and estudanteRegistrarBean.nome.equals('Leandro')}"/><br/>
+    <h:outputText value="Comparação Notas:"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 le estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq 0 ? 'ZERO':  'NÃO ZERO'}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 = 40 }"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nome += ' sobrenomealgumacoisa'}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nome}"/><br/>
+    <!-- Palavras reservadas:
+        and, or, not, eq, ne, lt, gt, le, ge, true, false, null, instanceof, empty, div e mod
+     -->
+
+</h:body>
+</html>

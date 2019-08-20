@@ -8,7 +8,7 @@
       xmlns:p="http://primefaces.org/ui">
 <h:body>
     <p:importEnum type="br.com.devdojo.maratonajsf.model.enums.Turno"
-                  var="Turno" allSuffix="ALL_ENUM_VALUES" />
+                  var="Turno" allSuffix="ALL_ENUM_VALUES"/>
 
     <!--      http://4.bp.blogspot.com/-aiTqOY-SHv4/ViSC4COTB2I/AAAAAAAAFKo/-JmrBaW8k-A/s1600/jsf%2B22%2Bnamespaces.png-->
     <h:outputLabel value=", world"/><br/>
@@ -26,11 +26,52 @@
     <h:outputLabel value="#{estudanteRegistrarBean.estudante.nota1}"/><br/>
     <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome += ' sobrenomealgumacoisa'}"/><br/>
     <h:outputLabel value="#{estudanteRegistrarBean.estudante.nome}"/><br/>
-    <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno eq Turno.MATUTINO}"/><br/>
-    <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno.equals(Turno.VESPERTINO)}"/><br/>
     <!-- Palavras reservadas:
         and, or, not, eq, ne, lt, gt, le, ge, true, false, null, instanceof, empty, div e mod
      -->
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno eq Turno.MATUTINO}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.turno.equals(Turno.VESPERTINO)}"/><br/>
+    <!-- ARRAYS -->
+    <h:outputLabel
+            value="#{estudanteRegistrarBean.nomesArray[0]} #{estudanteRegistrarBean.nomesArray[1]} #{estudanteRegistrarBean.nomesArray[2]}"/><br/>
+
+    <!-- ui:repeat ARRAYS -->
+    <ui:repeat value="#{estudanteRegistrarBean.nomesArray}" var="nome">
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat><br/>
+
+    <!-- LISTA -->
+    <h:outputLabel
+            value="#{estudanteRegistrarBean.nomesList[0]} #{estudanteRegistrarBean.nomesList[1]} #{estudanteRegistrarBean.nomesList[2]}"/><br/>
+
+    <!-- ui:repeat lista -->
+    <ui:repeat value="#{estudanteRegistrarBean.nomesList}" var="nome">
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat><br/>
+
+    <!-- LISTA -->
+    <h:outputLabel
+            value="#{estudanteRegistrarBean.nomesList.get(0)} #{estudanteRegistrarBean.nomesList.get(1)} #{estudanteRegistrarBean.nomesList.get(2)}"/><br/>
+
+    <!-- ui:repeat lista -->
+    <ui:repeat value="#{estudanteRegistrarBean.nomesList}" var="nome">
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat>
+
+    <!-- ui:repeat set -->
+    <h:outputText value="------ set ------"/>
+    <ui:repeat value="#{estudanteRegistrarBean.nomesSet.toArray()}" var="nome">
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat>
+
+    <!--MAP-->
+    <h:outputText value="------ MAP ------"/>
+    <h:outputText value="#{estudanteRegistrarBean.nomesMap.get('Goku')}"/><br/>
+    <h:outputText value="#{estudanteRegistrarBean.nomesMap}"/><br/>
+    <ui:repeat value="#{estudanteRegistrarBean.nomesMap.entrySet().toArray()}" var="entry">
+        <h:outputLabel value="#{entry.key} - #{entry.value}"/><br/>
+    </ui:repeat>
+
 
 </h:body>
 </html>
